@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Input Form Semantic Elements</title>
+  <meta charset="UTF-8" />
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+</head>
+
+<body>
+  <header>
+    <h1>แบบฟอร์มสมัครงาน (Job Application Form)</h1>
+    <p>กรุณากรอกข้อมูลให้ครบถ้วนเพื่อประกอบการพิจารณาการสมัครงาน</p>
+    <hr>
+
+  </header>
+  <main>
+    <form action="https://www.w3schools.com/action_page.php" method="get" target="_blank">
+      <fieldset>
+        <legend>ข้อมูลส่วนบุคคล (Personal Information)</legend>
+
+        <label for="fullname">ชื่อ - นามสกุล:</label><br />
+        <input type="text" id="fullname" name="fullname" placeholder="เช่น นายสมชาย ใจดี" required /><br /><br />
+
+        <label for="user_email">อีเมลติดต่อ:</label><br />
+        <input type="email" id="user_email" name="user_email" placeholder="example@domain.com" required /><br /><br />
+
+        <label for="phone">เบอร์โทรศัพท์:</label><br />
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="081-234-5678" /><br /><br />
+
+        <label for="birthdate">วัน/เดือน/ปี เกิด:</label><br />
+        <input type="date" id="birthdate" name="birthdate" required /><br /><br />
+
+        <label for="age">อายุ (ปี):</label><br />
+        <input type="number" id="age" name="age" min="18" max="60" value="20" /><br /><br />
+
+        <label>เพศสภาพ:</label><br />
+        <input type="radio" id="gender-male" name="gender" value="male" checked />
+        <label for="gender-male">ชาย</label>
+
+        <input type="radio" id="gender-female" name="gender" value="female" />
+        <label for="gender-female">หญิง</label>
+
+        <input type="radio" id="gender-other" name="gender" value="other" />
+        <label for="gender-other">อื่นๆ</label>
+
+      </fieldset><br />
+      <button>Send Data</button> <br /><br />
+    </form>
+
+    <button>Save</button><br />
+    <hr />
+
+    <!-- Hidden Input -->
+    <input type="hidden" name="form_id" value="JOB_APP_2026" />
+
+    <!-- Dropdown with Groups -->
+    <section>
+      <fieldset>
+        <legend>ตำแหน่งและทักษะความสามารถ (Position & Skills)</legend>
+
+        <label for="major">ตำแหน่งที่ต้องการสมัคร:</label><br />
+        <select id="major" name="major" required>
+          <option value="" disabled selected>-- กรุณาเลือกตำแหน่งงาน --</option>
+          <optgroup label="สายงานพัฒนาซอฟต์แวร์">
+            <option value="frontend_dev">Frontend Developer</option>
+            <option value="backend_dev">Backend Developer</option>
+            <option value="fullstack_dev">Full-Stack Developer</option>
+          </optgroup>
+          <optgroup label="สายงานออกแบบและเกม">
+            <option value="ui_ux">UI/UX Designer</option>
+            <option value="game_dev">Game Developer</option>
+          </optgroup>
+          <optgroup label="เทคโนโลยีสารสนเทศและนวัตกรรม">
+            <option value="games">Games & Interactive Media</option>
+            <option value="cs">Computer Science</option>
+          </optgroup>
+          <optgroup label="ศิลปะ">
+            <option value="comm_arts">Communication Arts</option>
+          </optgroup>
+        </select><br /><br />
+
+        <label for="workplace">สถานที่ปฏิบัติงานที่สะดวก (Datalist Autocomplete):</label><br />
+        <input type="text" id="workplace" name="workplace" list="workplace-list"
+          placeholder="เลือกหรือพิมพ์สถานที่..." />
+        <datalist id="workplace-list">
+          <option value="Bangkok University (Main Campus)"></option>
+          <option value="Bangkok University (City Campus)"></option>
+          <option value="Work from Home (Remote)"></option>
+        </datalist><br /><br />
+
+        <!-- Checkboxes (Multiple Choice) -->
+        <label>ทักษะและความถนัด (เลือกได้มากกว่า 1 ข้อ):</label><br />
+        <input type="checkbox" name="interests" value="coding" /> Coding <br />
+        <input type="checkbox" name="interests" value="design" />Design <br />
+        <input type="checkbox" name="interests" value="manager" />Management <br />
+        <input type="checkbox" name="interests" value="marketing" />Marketing <br />
+        <input type="checkbox" name="skills" value="html" /> HTML<br />
+        <input type="checkbox" name="skills" value="css" /> CSS<br />
+        <input type="checkbox" name="skills" value="javascript" /> JavaScript<br />
+        <input type="checkbox" name="skills" value="python" /> Python<br />
+        <input type="checkbox" name="skills" value="git" /> Git
+        <br /><br />
+
+        <label for="salary">เงินเดือนที่คาดหวัง (บาท):</label><br />
+        <input type="number" id="salary" name="salary" min="15000" max="100000" step="1000"
+          placeholder="เช่น 25000" /><br /><br />
+
+        <label for="resume">แนบไฟล์เรซูเม่ / พอร์ตโฟลิโอ (File Upload):</label><br />
+        <input type="file" id="resume" name="resume" />
+      </fieldset>
+    </section><br /><br />
+
+    <!-- Comments & Feedback -->
+    <section>
+      <fieldset>
+        <legend>แนะนำตัวเพิ่มเติม (Cover Letter)</legend>
+        <label for="feedback">แนะนำตัวเองและเหตุผลที่อยากร่วมงานกับเรา:</label><br />
+        <textarea id="feedback" name="feedback" rows="5" cols="50" placeholder="Type your review here..."></textarea>
+      </fieldset>
+    </section><br />
+
+    <!-- submit & reset -->
+    <input type="submit" value="ส่งใบสมัคร (Submit)" />
+    <input type="reset" value="ล้างข้อมูล (Reset)" />
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; <time datetime="2026">2026</time> Bangkok University | Tanyawan Mungngam
+      1680702535</p>
+  </footer>
+  <p>
+    Contact us: <a href="mailto:tanyawan.mung@bugmail.net">tanyawan.mung@bugmail.net</a>
+  </p>
+  <nav aria-label="Footer Legal Links">
+    <a href="products.html">Products</a> |
+    <a href="deals.html">Deals</a> |
+    <a href="support.html">Support</a>
+  </nav>
+  </footer>
+</body>
+
+</html>
